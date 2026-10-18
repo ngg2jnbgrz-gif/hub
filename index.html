@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04070d">
+<title>COMMAND HUB — Cj</title>
+<style>
+  :root{
+    --bg:#04070d; --panel:#0a111c; --cyan:#00e5ff; --amber:#ffb300;
+    --txt:#d7f6ff; --dim:#5f7b8c;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0; background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding-bottom:env(safe-area-inset-bottom);}
+  .wrap{max-width:760px; margin:0 auto; padding:calc(env(safe-area-inset-top,0px) + 18px) 16px 32px;}
+  /* radar sweep header */
+  .radar{position:relative; height:120px; border:1px solid rgba(0,229,255,.25);
+    border-radius:14px; overflow:hidden; margin-bottom:18px;
+    background:radial-gradient(circle at 50% 130%, rgba(0,229,255,.10), transparent 65%);}
+  .radar::before{content:""; position:absolute; left:50%; top:100%; width:200%; aspect-ratio:1;
+    transform:translate(-50%,-50%); border-radius:50%;
+    background:conic-gradient(from 0deg, rgba(0,229,255,.55), transparent 18%);
+    animation:sweep 4s linear infinite;}
+  .radar::after{content:""; position:absolute; inset:0; border-radius:14px;
+    background:repeating-radial-gradient(circle at 50% 130%, transparent 0 26px, rgba(0,229,255,.08) 26px 27px);}
+  @keyframes sweep{to{transform:translate(-50%,-50%) rotate(360deg);}}
+  .title{position:relative; z-index:1; text-align:center; padding-top:26px;}
+  .title h1{margin:0; font-size:30px; letter-spacing:6px; color:var(--cyan);
+    text-shadow:0 0 18px rgba(0,229,255,.8);}
+  .title p{margin:6px 0 0; font-size:12px; letter-spacing:3px; color:var(--dim);}
+  .grid{display:grid; gap:14px;}
+  .card{display:block; text-decoration:none; color:var(--txt);
+    background:linear-gradient(160deg, var(--panel), #060b14);
+    border:1px solid rgba(0,229,255,.28); border-radius:14px;
+    padding:18px; min-height:44px;
+    box-shadow:0 0 0 rgba(0,229,255,0); transition:box-shadow .2s, border-color .2s;}
+  .card:active{border-color:var(--cyan); box-shadow:0 0 22px rgba(0,229,255,.35);}
+  .card .row{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .card h2{margin:0; font-size:19px; letter-spacing:1px; color:#fff;}
+  .card .desc{margin:8px 0 4px; font-size:13.5px; color:var(--dim); line-height:1.45;}
+  .card .stats{margin:10px 0 0; font-size:12.5px; color:var(--cyan); line-height:1.7;}
+  .badge{flex:0 0 auto; font-size:11px; font-weight:700; letter-spacing:2px;
+    padding:6px 10px; border-radius:999px; border:1px solid;}
+  .badge.live{color:#031; background:var(--cyan); border-color:var(--cyan);
+    text-shadow:none; box-shadow:0 0 12px rgba(0,229,255,.7);}
+  .badge.repo{color:var(--amber); border-color:rgba(255,179,0,.55); background:rgba(255,179,0,.08);}
+  .arrow{color:var(--cyan); font-size:22px; text-shadow:0 0 10px rgba(0,229,255,.8);}
+  .foot{margin-top:22px; text-align:center; font-size:11px; color:var(--dim); letter-spacing:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="radar" aria-hidden="true">
+    <div class="title">
+      <h1>COMMAND HUB</h1>
+      <p>EVERYTHING · ONE ROOF</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="https://ngg2jnbgrz-gif.github.io/patchogue-flooring-war-room/">
+      <div class="row"><h2>LEADS WAR ROOM</h2><span class="badge live">LIVE</span></div>
+      <p class="desc">Homeowner prospecting command — Patchogue Flooring lead machine.</p>
+      <p class="stats">10 hot property managers · 82 scored new owners · 466 homeowners · ZIP intel · playbook</p>
+      <div class="row" style="margin-top:10px"><span></span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="https://ngg2jnbgrz-gif.github.io/patchogue-flooring-marketing-war-room/">
+      <div class="row"><h2>MARKETING WAR ROOM</h2><span class="badge live">LIVE</span></div>
+      <p class="desc">Content analytics command — every post tracked, winners found.</p>
+      <p class="stats">70 Week-1 posts · KPI tracking · winners board · pro KPIs (hook / hold / sends-per-reach)</p>
+      <div class="row" style="margin-top:10px"><span></span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="https://github.com/ngg2jnbgrz-gif/grandprix-crm">
+      <div class="row"><h2>GRAND PRIX CRM</h2><span class="badge repo">GITHUB</span></div>
+      <p class="desc">White-label CRM — Tron HUD, multi-tenant client portals. Source code.</p>
+      <p class="stats">Repo: ngg2jnbgrz-gif/grandprix-crm</p>
+      <div class="row" style="margin-top:10px"><span></span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="https://github.com/ngg2jnbgrz-gif/grandprix-crm-deploy">
+      <div class="row"><h2>CRM DEPLOY BUILD</h2><span class="badge repo">GITHUB</span></div>
+      <p class="desc">Deploy-ready build with the Outreach Deck call cockpit. Netlify target.</p>
+      <p class="stats">Repo: ngg2jnbgrz-gif/grandprix-crm-deploy</p>
+      <div class="row" style="margin-top:10px"><span></span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="https://github.com/ngg2jnbgrz-gif/grandprix-crm-deploy-782fd">
+      <div class="row"><h2>CRM DEPLOY SNAPSHOT</h2><span class="badge repo">GITHUB</span></div>
+      <p class="desc">Earlier deploy snapshot (Oct 1). Kept for reference.</p>
+      <p class="stats">Repo: ngg2jnbgrz-gif/grandprix-crm-deploy-782fd</p>
+      <div class="row" style="margin-top:10px"><span></span><span class="arrow">→</span></div>
+    </a>
+  </div>
+
+  <div class="foot">GRAND PRIX DYNAMICS · PATCHOGUE FLOORING</div>
+</div>
+</body>
+</html>
